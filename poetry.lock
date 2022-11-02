@@ -36,8 +36,8 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [package.extras]
-azure-pipelines = ["coverage", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface", "pytest-azurepipelines"]
-dev = ["coverage", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface", "sphinx", "pre-commit"]
+azure-pipelines = ["coverage", "hypothesis", "pympler", "pytest (>=4.3.0)", "pytest-azurepipelines", "six", "zope.interface"]
+dev = ["coverage", "hypothesis", "pre-commit", "pympler", "pytest (>=4.3.0)", "six", "sphinx", "zope.interface"]
 docs = ["sphinx", "zope.interface"]
 tests = ["coverage", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface"]
 
@@ -97,9 +97,9 @@ optional = false
 python-versions = ">=3.6"
 
 [package.extras]
-dev = ["tox (>=3)", "flake8", "pep8-naming", "wheel", "twine"]
+dev = ["flake8", "pep8-naming", "tox (>=3)", "twine", "wheel"]
 docs = ["sphinx (>=1.8)", "sphinx-autodoc-typehints", "sphinx-rtd-theme"]
-test = ["pytest (>=6)", "pytest-mock (>=3)", "mock (>=4)", "pytest-cov", "coverage"]
+test = ["coverage", "mock (>=4)", "pytest (>=6)", "pytest-cov", "pytest-mock (>=3)"]
 
 [[package]]
 name = "immutables"
@@ -121,8 +121,8 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 zipp = ">=0.5"
 
 [package.extras]
-docs = ["sphinx", "rst.linker"]
-testing = ["packaging", "importlib-resources"]
+docs = ["rst.linker", "sphinx"]
+testing = ["importlib-resources", "packaging"]
 
 [[package]]
 name = "iniconfig"
@@ -143,8 +143,8 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 [package.extras]
 pipfile = ["pipreqs", "requirementslib"]
 pyproject = ["toml"]
-requirements = ["pipreqs", "pip-api"]
-xdg_home = ["appdirs (>=1.4.0)"]
+requirements = ["pip-api", "pipreqs"]
+xdg-home = ["appdirs (>=1.4.0)"]
 
 [[package]]
 name = "jinja2"
@@ -241,7 +241,7 @@ mccabe = ">=0.6,<0.7"
 toml = ">=0.7.1"
 
 [package.extras]
-docs = ["sphinx (>=3.2,<4.0)", "python-docs-theme"]
+docs = ["python-docs-theme", "sphinx (>=3.2,<4.0)"]
 
 [[package]]
 name = "pyparsing"
@@ -283,11 +283,14 @@ python-versions = "*"
 
 [[package]]
 name = "rope"
-version = "0.14.0"
+version = "1.1.1"
 description = "a python refactoring library..."
 category = "dev"
 optional = false
-python-versions = "*"
+python-versions = ">=3"
+
+[package.extras]
+dev = ["build", "pytest", "pytest-timeout"]
 
 [[package]]
 name = "toml"
@@ -322,13 +325,13 @@ optional = false
 python-versions = ">=3.6"
 
 [package.extras]
-docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
-testing = ["jaraco.itertools", "func-timeout"]
+docs = ["jaraco.packaging (>=3.2)", "rst.linker (>=1.9)", "sphinx"]
+testing = ["func-timeout", "jaraco.itertools"]
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "97ad2fbb808bd5bc77925987a729514d08127024752bc41557762f758f29b067"
+content-hash = "c72768f6d071c25cd23cf08e95766e9459ae2d2915e9883683b25f8735298758"
 
 [metadata.files]
 appdirs = [
@@ -550,12 +553,10 @@ regex = [
     {file = "regex-2020.2.20.tar.gz", hash = "sha256:9e9624440d754733eddbcd4614378c18713d2d9d0dc647cf9c72f64e39671be5"},
 ]
 rope = [
-    {file = "rope-0.14.0-py2-none-any.whl", hash = "sha256:6b728fdc3e98a83446c27a91fc5d56808a004f8beab7a31ab1d7224cecc7d969"},
-    {file = "rope-0.14.0-py3-none-any.whl", hash = "sha256:f0dcf719b63200d492b85535ebe5ea9b29e0d0b8aebeb87fe03fc1a65924fdaf"},
-    {file = "rope-0.14.0.tar.gz", hash = "sha256:c5c5a6a87f7b1a2095fb311135e2a3d1f194f5ecb96900fdd0a9100881f48aaf"},
+    {file = "rope-1.1.1-py3-none-any.whl", hash = "sha256:216390b6342bde8ef1f27a6663554de0ea0b1fdad7c421deb3d5a3f6c5fc01e7"},
+    {file = "rope-1.1.1.tar.gz", hash = "sha256:13048ff0245a0fa187f282697a55add46e4ccf083e7670f868bdf54ee9e47f2e"},
 ]
 toml = [
-    {file = "toml-0.10.0-py2.7.egg", hash = "sha256:f1db651f9657708513243e61e6cc67d101a39bad662eaa9b5546f789338e07a3"},
     {file = "toml-0.10.0-py2.py3-none-any.whl", hash = "sha256:235682dd292d5899d361a811df37e04a8828a5b1da3115886b73cf81ebc9100e"},
     {file = "toml-0.10.0.tar.gz", hash = "sha256:229f81c57791a41d65e399fc06bf0848bab550a9dfd5ed66df18ce5f05e73d5c"},
 ]
